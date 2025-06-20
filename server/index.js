@@ -11,7 +11,7 @@ const server = http.createServer(app);
 // CORS configuration for production
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-domain.vercel.app', 'https://your-frontend-domain.netlify.app'] // Update these with your actual frontend URLs
+    ? process.env.CLIENT_URL // Use the CLIENT_URL from environment variables
     : "http://localhost:5173",
   methods: ["GET", "POST"],
   credentials: true
